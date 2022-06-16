@@ -1,5 +1,9 @@
-function TodoItem() {
-  return <>{/* <li className="todoList">aflejlkafjdklajflkajslkf</li> */}</>;
+function TodoItem({ item }) {
+  return (
+    <>
+      <div className="todoList">{item.todo}</div>
+    </>
+  );
 }
 
 export default TodoItem;
