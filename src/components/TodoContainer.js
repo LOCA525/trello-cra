@@ -9,7 +9,6 @@ function TodoContainer() {
   const [titleData, setTitleData] = useState([]);
   const id = useRef(0);
 
-  console.log(titleData);
   const handleTitleDelete = (id) => {
     const filteredTitle = titleData.filter((item) => item.id !== id);
     setTitleData(filteredTitle);
@@ -32,7 +31,6 @@ function TodoContainer() {
               id.current = id.current + 1;
               setInputValue("");
               setToggle(!toggle);
-              console.log(titleData);
             }}
           >
             <input
