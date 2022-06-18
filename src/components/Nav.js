@@ -5,7 +5,7 @@ function Nav() {
     <>
       <div className="nav">
         <h2>Trello</h2>
-        <Container></Container>
+        <Container />
       </div>
     </>
   );

@@ -7,8 +7,8 @@ import TodoContainer from "./components/TodoContainer";
 function App() {
   return (
     <div className="App">
-      <Nav></Nav>
-      <TodoContainer></TodoContainer>
+      <Nav />
+      <TodoContainer />
     </div>
   );
 }

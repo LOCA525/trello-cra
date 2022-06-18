@@ -1,11 +1,10 @@
 import TodoBox from "./TodoBox";
 import { useState, useRef } from "react";
 import TodoItem from "./TodoItem";
+import BoardList from "./BoardList";
+import AddBoardBtn from "./AddBoardBtn";
 
 function TodoContainer() {
-  let [toggle, setToggle] = useState(true);
-  let [inputValue, setInputValue] = useState("");
-
   const [titleData, setTitleData] = useState([]);
   const id = useRef(0);
 
@@ -15,42 +14,10 @@ function TodoContainer() {
   };
 
   return (
-    <>
-      <div className="todoContainer">
-        {titleData.map((item) => {
-          return <TodoBox item={item} id={id} handleTitleDelete={handleTitleDelete}></TodoBox>;
-        })}
-
-        {toggle === true ? null : (
-          <form
-            typeof="submit"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const nextTitleData = [...titleData, { id: id.current, title: inputValue }];
-              setTitleData(nextTitleData);
-              id.current = id.current + 1;
-              setInputValue("");
-              setToggle(!toggle);
-            }}
-          >
-            <input
-              onChange={(e) => {
-                setInputValue(e.target.value);
-              }}
-              value={inputValue}
-            ></input>
-          </form>
-        )}
-        <button
-          className="addBoxBtn"
-          onClick={() => {
-            setToggle(!toggle);
-          }}
-        >
-          추가
-        </button>
-      </div>
-    </>
+    <div className="todoContainer">
+      <BoardList titleData={titleData} id={id} handleTitleDelete={handleTitleDelete} />
+      <AddBoardBtn id={id} setTitleData={setTitleData} titleData={titleData} />
+    </div>
   );
 }
 

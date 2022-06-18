@@ -70,7 +70,7 @@ button {
   margin-bottom: 20px;
 }
 
-.App .todoContainer .addBoxBtn {
+/* .App .todoContainer .addBoxBtn {
   cursor: pointer;
   width: 300px;
   height: 40px;
@@ -82,7 +82,7 @@ button {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
-}
+} */
 
 .App .todoContainer .todoBox .title1 {
   padding: 10px;
